@@ -1,13 +1,18 @@
 {
     "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
     "meta": {
-        "version": "PTDL_v1"
+        "version": "PTDL_v2",
+        "update_url": null
     },
-    "exported_at": "2019-12-08T22:32:56+08:00",
-    "name": "JC3MP-Linux",
-    "author": "service@hcgcloud.com",
-    "description": "Just Cause 3 Multiplayer Linux",
-    "image": "hcgcloud\/pterodactyl-jc3mp:latest",
+    "exported_at": "2024-07-14T13:20:25+02:00",
+    "name": "JustCause3-Multiplayer-Dedicated-Server",
+    "author": "contact@dium-corp.fr",
+    "description": "Just Cause 3 Multiplayer Dedicated Server Linux Oublie pas qui faut 3 port un pour rejoindre un pour download les packages est un pour l'afficher dans la List des serveur",
+    "features": null,
+    "docker_images": {
+        "hcgcloud\/pterodactyl-jc3mp:latest": "hcgcloud\/pterodactyl-jc3mp:latest"
+    },
+    "file_denylist": [],
     "startup": ".\/Server",
     "config": {
         "files": "{\r\n    \"config.json\": {\r\n        \"parser\": \"json\",\r\n        \"find\": {\r\n            \"bind\": \"0.0.0.0\",\r\n            \"port\": \"{{server.build.default.port}}\",\r\n            \"queryPort\": \"{{server.build.env.QUERY_PORT}}\",\r\n            \"httpPort\": \"{{server.build.env.HTTP_PORT}}\"\r\n        }\r\n    }\r\n}",
@@ -28,27 +33,30 @@
             "description": "Input 1 to enable or 0 to disable",
             "env_variable": "SERVER_AUTOUPDATE",
             "default_value": "1",
-            "user_viewable": 1,
-            "user_editable": 1,
-            "rules": "required|integer|between:0,1"
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|between:0,1",
+            "field_type": "text"
         },
         {
             "name": "QUERY_PORT",
             "description": "",
             "env_variable": "QUERY_PORT",
             "default_value": "",
-            "user_viewable": 1,
-            "user_editable": 0,
-            "rules": "required|integer|between:1,65535"
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|between:1,65535",
+            "field_type": "text"
         },
         {
             "name": "HTTP_PORT",
             "description": "",
             "env_variable": "HTTP_PORT",
             "default_value": "",
-            "user_viewable": 1,
-            "user_editable": 0,
-            "rules": "required|integer|between:1,65535"
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|between:1,65535",
+            "field_type": "text"
         }
     ]
 }
